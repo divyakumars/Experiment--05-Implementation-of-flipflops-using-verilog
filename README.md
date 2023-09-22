@@ -1,4 +1,7 @@
-# Experiment--05-Implementation-of-flipflops-using-verilog
+### NAME:DIVYA K
+### REG NO:212222230035
+
+# Experiment 05 Implementation of flipflops using verilog
 ### AIM: To implement all the flipflops using verilog and validating their functionality using their functional tables
 ### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
 ### SOFTWARE REQUIRED:   Quartus prime
@@ -102,34 +105,64 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ⇒Q(t+1)=T⊕Q(t)
 
 ### Procedure
-/* write all the steps invloved */
+#### 1.Create a project with required entities. 
+#### 2.Create a module along with respective file name. 
+#### 3.Run the respective programs for the given boolean equations. 
+#### 4.Run the module and get the respective RTL outputs. 
+#### 5.Create university program(VWF) for getting timing diagram.
+#### 6.Give the respective inputs for timing diagram and obtain the results.
 
 
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: DIVYA K
+RegisterNumber:  212222230035
+```
+### SR Flip-Flop
+```
+module ex05(s,r,q,qbar,clk);
+input s,r,clk;
+output reg q,qbar;
+initial q=0;
+initial qbar=1;
+always @ (posedge clk)
+begin
+q=s|(q&(~r));
+qbar=r|(qbar&(~s));
+end
+endmodule
+```
+### JK Flip-Flop
+```
+module jk(k,j,q,qbar,clk);
+input k,j,clk;
+output reg q;
+output reg qbar;
+initial q=0;
+initial qbar=1;
+always @ (posedge clk)
+begin
+q=((~q)&j)|(q&~k);
+qbar=(~qbar&k)|(qbar&~j);
+end
+endmodule
+```
+
+
+### RTL DIAGRAM FOR FLIPFLOPS :
+![flipflop rtl](https://github.com/divyakumars/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119393621/c1f1295a-3a8f-4000-b996-08c888291c35)
+
+![jk rtl](https://github.com/divyakumars/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119393621/d7316187-b35f-4a8d-8699-9b9c21040f50)
 
 
 
 
+### OUTPUT WAVEFORM:
+![image](https://github.com/divyakumars/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119393621/71205c07-de35-4778-bb4b-9916d6317a22)
 
-
-### RTL LOGIC FOR FLIPFLOPS 
-
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR FLIP FLOPS 
-
+![RS WAVE](https://github.com/divyakumars/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119393621/d7a8f766-22f1-4e9a-9dfe-0cc2e9a1871b)
 
 
 
@@ -138,3 +171,4 @@ RegisterNumber:
 
 
 ### RESULTS 
+Hence all the flipflops are implemented using verilog and their functionality has been validated using their functional tables.
