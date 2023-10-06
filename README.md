@@ -149,6 +149,21 @@ qbar=(~qbar&k)|(qbar&~j);
 end
 endmodule
 ```
+### D FlipFlop
+```
+module dflipflop(D,clk,Q,Qbar);
+input D,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin
+Q=D;
+Qbar=~D;
+end
+endmodule
+```
 
 
 ### RTL DIAGRAM FOR FLIPFLOPS :
@@ -156,16 +171,14 @@ endmodule
 
 ![jk rtl](https://github.com/divyakumars/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119393621/d7316187-b35f-4a8d-8699-9b9c21040f50)
 
-
-
+![dff](https://github.com/divyakumars/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119393621/5731193a-1e5b-41ca-8d29-d261e5bff7db)
 
 ### OUTPUT WAVEFORM:
 ![image](https://github.com/divyakumars/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119393621/71205c07-de35-4778-bb4b-9916d6317a22)
 
 ![RS WAVE](https://github.com/divyakumars/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119393621/d7a8f766-22f1-4e9a-9dfe-0cc2e9a1871b)
 
-
-
+![image](https://github.com/divyakumars/Experiment--05-Implementation-of-flipflops-using-verilog/assets/119393621/cb6ba490-257a-4e38-9f84-2bd8ac94fc7c)
 
 
 
